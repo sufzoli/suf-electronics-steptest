@@ -1,0 +1,5 @@
+# For OpenSCAD 3D Printing designs
+
+# Result files
+*.stl
+*.gcode

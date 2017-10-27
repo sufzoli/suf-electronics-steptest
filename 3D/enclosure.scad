@@ -1,0 +1,53 @@
+$fn=100;
+
+difference()
+{
+    union()
+    {
+        translate([-25,0,0])
+            cube([50,55,2.5]);
+        for(i=[4,42])
+            for(j=[-21,21])
+                translate([j,i,0])
+                    cylinder(d=7,h=6);
+        hull()
+        {
+            translate([-27.5,0,0])
+                cube([2.5,0.001,2.5]);
+            translate([-27.5,55,0])
+                cube([2.5,0.001,15]);
+        }
+        hull()
+        {
+            translate([25,0,0])
+                cube([2.5,0.001,2.5]);
+            translate([25,55,0])
+                cube([2.5,0.001,15]);
+        }
+    }
+    for(i=[4,42])
+        for(j=[-21,21])
+            translate([j,i,-0.001])
+            {
+                cylinder(d=3.5,h=6.002);
+                cylinder(d1=6.5,d2=0.001,h=3.25);
+            }
+}
+difference()
+{
+    translate([-40,55,0])
+        cube([80,2.5,42]);
+
+    translate([7.25,54.999,21])
+        rotate([-90,0,0])
+            cylinder(d=16,h=2.502);
+    translate([32,54.999,21])
+        rotate([-90,0,0])
+            cylinder(d=3.5,h=2.502);
+    translate([-19,54.999,21])
+        rotate([-90,0,0])
+            cylinder(d=6.5,h=2.502);
+    translate([-33.5,54.999,21])
+        rotate([-90,0,0])
+            cylinder(d=6.5,h=2.502);
+}
